@@ -29,9 +29,7 @@ Right Click --> Select "Open in Terminal"
 
 git clone https://github.com/68130023-dev/CT526-0023-Flask.git
 
-cd CT526-0023-Flask
-
-cd 0023_Flask_Yuttana
+cd 0023_Intermediate-Web-using-Flask_Yuttana
 
 ตรวจสอบว่ามี Python ติดตั้งแล้ว (พิมพ์ python --version)
 
