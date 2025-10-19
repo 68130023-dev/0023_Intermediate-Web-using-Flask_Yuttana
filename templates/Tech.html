@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title or "Tractor Autonomous Tech" }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name="description" content="สรุปเทคโนโลยีรถแทรกเตอร์ขับเคลื่อนอัตโนมัติ: ระบบนำทาง RTK, ชุดเซ็นเซอร์ LiDAR/Camera, การเชื่อมต่อ IoT/Telematics, ความปลอดภัย และกรณีใช้งานในไร่ค่ะ">
+  </head>
+  <body>
+    <header class="container">
+      <h1>Tractor Autonomous Technology</h1>
+      <nav>
+        <a href="{{ url_for('home') }}">หน้าแรก</a> ·
+        <a href="{{ url_for('Tech') }}">เกี่ยวกับเทคโนโลยี</a>  ·
+        <a href="{{ url_for('MyID') }}" id="myid-link">MyID</a>  ·
+        <a href="{{ url_for('draw') }}" id="myid-link">draw</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <!-- HERO -->
+      <section class="card" style="text-align:center">
+        <img src="{{ url_for('static', filename='Tractor.jpg') }}" alt="Autonomous Tractor" style="max-width:100%;height:auto;border-radius:16px">
+        <h2 style="margin-top:1rem">รถแทรกเตอร์อัตโนมัติ สำหรับเกษตรแม่นยำ</h2>
+        <p class="muted">
+          ยกระดับงานไร่ให้แม่นยำ ปลอดภัย และคุ้มค่าขึ้น ด้วยระบบนำทางความเที่ยงตรงสูง การรับรู้สิ่งกีดขวางแบบเรียลไทม์
+          และการเชื่อมต่อข้อมูลเครื่องจักรผ่านคลาวด์ค่ะ
+        </p>
+      </section>
+
+      <!-- KEY FEATURES -->
+      <section class="card">
+        <h3>จุดเด่นหลัก (Key Features)</h3>
+        <ul>
+          <li><b>RTK-GNSS ±2.5 ซม.</b> นำทางตามเส้นทาง A-B / Headland อย่างแม่นยำ เดินรอยเดิมได้สม่ำเสมอค่ะ</li>
+          <li><b>Sensor Fusion</b> ผสาน <i>LiDAR + กล้อง + เรดาร์</i> ตรวจจับคน สิ่งกีดขวาง และสัตว์ได้แบบเรียลไทม์</li>
+          <li><b>Autosteer &amp; Powertrain Control</b> ควบคุมพวงมาลัย คันเร่ง PTO และไฮดรอลิกตามภารกิจอัตโนมัติ</li>
+          <li><b>Telematics/IoT</b> มอนิเตอร์สถานะเครื่อง น้ำมันเชื้อเพลิง โค้ดแจ้งเตือน และอัปเดต OTA ผ่านคลาวด์</li>
+          <li><b>Mission Planner</b> วางแผนงานเป็น “Task” ตั้งเส้นทาง ความเร็ว อุปกรณ์ต่อพ่วง และเวลาทำงานล่วงหน้า</li>
+          <li><b>Safety</b> ปุ่มฉุกเฉิน (E-Stop), เสียง/ไฟแจ้งเตือน, <i>Geofence</i> จำกัดพื้นที่ทำงาน และล็อกผู้ใช้</li>
+        </ul>
+      </section>
+
+      <!-- SPEC SUMMARY -->
+      <section class="card">
+        <h3>สรุปสเปกระบบ (Spec Snapshot)</h3>
+        <table>
+          <tbody>
+            <tr><td>ความแม่นยำการนำทาง</td><td>RTK ±2.5 ซม.</td></tr>
+            <tr><td>โหมดการทำงาน</td><td>เต็มอัตโนมัติ / กึ่งอัตโนมัติ / รีโมต</td></tr>
+            <tr><td>การรับรู้สิ่งกีดขวาง</td><td>LiDAR 360° + กล้อง RGB/IR + เรดาร์</td></tr>
+            <tr><td>การเชื่อมต่อ</td><td>4G/5G, Wi-Fi, GNSS RTK Base/Network</td></tr>
+            <tr><td>ความปลอดภัย</td><td>E-Stop, Geo-fence, Remote Stop, แจ้งเตือน OTA</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- USE CASES -->
+      <section class="card">
+        <h3>เหมาะกับงานอะไรบ้าง?</h3>
+        <div class="grid" style="display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+          <div class="card"><b>ไถ พรวน เตรียมดิน</b><br>วิ่งตรง เสียบน้อย ประหยัดเชื้อเพลิงค่ะ</div>
+          <div class="card"><b>พ่น/ใส่ปุ๋ยแม่นยำ</b><br>คุมอัตรา (Rate Control) ลดซ้ำซ้อน/ลดช่องว่าง</div>
+          <div class="card"><b>หว่าน/ปลูกเป็นแนว</b><br>ระยะห่างสม่ำเสมอ เพิ่มอัตรารอดของต้น</div>
+          <div class="card"><b>ทำงานกลางคืน</b><br>เซ็นเซอร์ช่วยทัศนวิสัยต่ำ ลดภาระคนขับ</div>
+        </div>
+      </section>
+
+      <!-- BENEFITS -->
+      <section class="card">
+        <h3>ประโยชน์ที่วัดผลได้</h3>
+        <ul>
+          <li>ลดต้นทุนแรงงานและการซ้อนทับของร่องงาน 10–20%*</li>
+          <li>เพิ่มประสิทธิภาพครอบคลุมพื้นที่ต่อชั่วโมง 15–30%*</li>
+          <li>คุณภาพงานสม่ำเสมอ และข้อมูลพร้อมใช้ตัดสินใจ (*ขึ้นกับงานและแปลงค่ะ)</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="container small">
+      กลับไป <a href="{{ url_for('home') }}">หน้าแรก</a>
+    </footer>
+  </body>
+</html>

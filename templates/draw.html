@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ตัวอักษร x จำนวน n | Flask Project</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header class="container">
+    <h1>แสดงผลตัวอักษรซ้ำตามจำนวน</h1>
+    <nav>
+      <a href="{{ url_for('home') }}">หน้าแรก</a>  ·
+      <a href="{{ url_for('Tech') }}">เกี่ยวกับเทคโนโลยี</a>  ·
+      <a href="{{ url_for('MyID') }}" id="myid-link">MyID</a>  ·
+      <a href="{{ url_for('draw') }}" id="myid-link">draw</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>ป้อนค่าและกด Run</h2>
+
+      <form id="repeat-form" onsubmit="return false;" style="display:grid; gap:12px; max-width:520px;">
+        <label>
+          ตัวอักษร:
+          <input id="charInput" type="text" maxlength="5" required placeholder="เช่น x" class="input">
+        </label>
+
+        <label>
+          จำนวนครั้ง (ตัวเลข ≥ 1):
+          <input id="countInput" type="number" min="1" step="1" required placeholder="เช่น 4" class="input">
+        </label>
+
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <button id="runBtn" class="button" type="button">Run</button>
+          <button id="resetBtn" class="button" type="button">รีเซ็ต</button>
+        </div>
+      </form>
+
+      <h3 style="margin-top:16px;">ผลลัพธ์</h3>
+      <pre id="output" style="min-height:100px; padding:12px; border-radius:12px; background:#f7f7f9; white-space:pre-wrap;"></pre>
+    </section>
+  </main>
+
+  <script>
+    const charInput  = document.getElementById('charInput');
+    const countInput = document.getElementById('countInput');
+    const output     = document.getElementById('output');
+
+    function run() {
+      const ch = (charInput.value || '').trim();
+      const n  = parseInt(countInput.value, 10);
+
+      if (!ch) { alert('กรุณาใส่ตัวอักษร'); charInput.focus(); return; }
+      if (!Number.isInteger(n) || n < 1) { alert('กรุณาใส่ตัวเลขตั้งแต่ 1 ขึ้นไป'); countInput.focus(); return; }
+
+      let lines = [];
+      for (let i = 1; i <= n; i++) {
+        lines.push(ch.repeat(i));
+      }
+      output.textContent = lines.join('\n');
+    }
+
+    function resetForm() {
+      document.getElementById('repeat-form').reset();
+      output.textContent = '';
+      charInput.focus();
+    }
+
+    document.getElementById('runBtn').addEventListener('click', run);
+    document.getElementById('resetBtn').addEventListener('click', resetForm);
+
+    // กด Enter ใด ๆ ในฟอร์มให้ทำงานเหมือนกด Run
+    document.getElementById('repeat-form').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') { e.preventDefault(); run(); }
+    });
+  </script>
+      <footer class="container small">
+      กลับไป <a href="{{ url_for('home') }}">หน้าแรก</a>
+    </footer>
+</body>
+</html>

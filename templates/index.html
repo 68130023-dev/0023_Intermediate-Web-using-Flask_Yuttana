@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>วัดอรุณราชวราราม | Flask Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <header class="container">
+      <h1>วัดอรุณราชวราราม ราชวรมหาวิหาร</h1>
+      <nav>
+        <a href="{{ url_for('home') }}">แนะนำสถานที่ท่องเที่ยว</a> ·
+        <a href="{{ url_for('Tech') }}">เกี่ยวกับเทคโนโลยี</a>  ·
+        <a href="{{ url_for('MyID') }}" id="myid-link">MyID</a>  ·
+        <a href="{{ url_for('draw') }}" id="myid-link">draw</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>สัญลักษณ์แห่งกรุงเทพฯ ริมแม่น้ำเจ้าพระยา</h2>
+        <img src="{{ url_for('static', filename='Watarun.jpg') }}" 
+             alt="วัดอรุณราชวราราม" 
+             style="width:100%; border-radius:16px; margin-bottom:16px;">
+        <p>
+          วัดอรุณราชวราราม หรือที่รู้จักกันทั่วไปว่า “วัดอรุณ” 
+          เป็นหนึ่งในวัดที่เก่าแก่และงดงามที่สุดในกรุงเทพมหานคร 
+          ตั้งอยู่ริมฝั่งตะวันตกของแม่น้ำเจ้าพระยา 
+          จุดเด่นของวัดคือ “พระปรางค์วัดอรุณ” 
+          ที่ประดับด้วยชิ้นกระเบื้องเคลือบหลากสีสัน 
+          สะท้อนแสงอาทิตย์ยามรุ่งอรุณอย่างงดงาม
+        </p>
+        <p>
+          ภายในวัดยังมีพระอุโบสถที่ประดิษฐานพระพุทธธรรมมิศรราชโลกธาตุดิลก 
+          ซึ่งเป็นพระพุทธรูปสำคัญ รวมถึงยักษ์วัดอรุณสองตนที่ยืนเฝ้าหน้าประตูโบสถ์ 
+          เป็นสัญลักษณ์ที่คุ้นตาของนักท่องเที่ยวทั้งชาวไทยและต่างประเทศ
+        </p>
+
+        <div style="display:flex; justify-content:center; gap:16px; margin-top:20px;">
+          <img src="{{ url_for('static', filename='Yak.jpg') }}" 
+               alt="ยักษ์วัดอรุณ" 
+               style="width:45%; border-radius:12px;">
+        </div>
+
+        <p style="margin-top:20px;">
+          วัดอรุณถือเป็นสถานที่ที่ควรค่าแก่การเยี่ยมชมในยามเช้า 
+          เมื่อแสงอาทิตย์ส่องสะท้อนองค์พระปรางค์ 
+          หรือในยามค่ำคืนที่มีการเปิดไฟประดับสวยงาม 
+          เหมาะแก่การถ่ายภาพและชมวิวริมแม่น้ำเจ้าพระยา
+        </p>
+      </section>
+    </main>
+
+    <footer class="container small">
+      Yuttana Emyong 68130023 <code></code>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>
