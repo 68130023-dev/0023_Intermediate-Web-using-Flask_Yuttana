@@ -27,7 +27,7 @@ Right Click --> Select "Open in Terminal"
 
 พิมพ์ git init
 
-git clone https://github.com/68130023-dev/CT526-0023-Flask.git
+git clone https://github.com/68130023-dev/0023_Intermediate-Web-using-Flask_Yuttana.git
 
 cd 0023_Intermediate-Web-using-Flask_Yuttana
 
