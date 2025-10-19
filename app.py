@@ -6,7 +6,10 @@ def abc(p1, p2):
     return p1 + p2
 
 def abc1(p1, p2):
-    return int(p1) + int(p2)
+    try:
+        return int(p1) + int(p2)
+    except ValueError:
+        return None
 
 @app.route("/")
 def home():
@@ -33,7 +36,10 @@ def concat(para1, para2):
 @app.route('/sum/<para3>/<para4>')
 def sumt(para3, para4):
     sum_result = abc1(para3, para4)
-    return f"The result of sum between '{para3}' and '{para4}' is '{sum_result}'"
+    if sum_result is None:
+        return "You are using miss data type for operation"
+    else:
+        return f"The result of sum between '{para3}' and '{para4}' is '{sum_result}'"
 
 if __name__ == "__main__":
    
